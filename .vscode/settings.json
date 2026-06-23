@@ -1,0 +1,9 @@
+{
+  "eslint.useFlatConfig": true,
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "cSpell.enabled": true
+}
