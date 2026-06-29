@@ -35,7 +35,7 @@ export function createNode(options = {}) {
   return node;
 }
 
-async function loadImage(name, ext) {
+export async function loadImage(name, ext) {
   const imageModule = await import(`./icons/${name}.${ext}`);
   const image = imageModule.default;
   console.log(image);

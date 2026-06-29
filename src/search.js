@@ -1,4 +1,5 @@
 import { createNode, renderUI } from "./layout.js";
+import { createLoder } from "./loader.js";
 import getWeatherData from "./weather.js";
 
 export function createSearchForm(parentNode) {
@@ -11,6 +12,7 @@ export function createSearchForm(parentNode) {
   const searchField = createNode({
     tag: "input",
     attributes: {
+      name: "search",
       type: "search",
       placeholder: "Search for a location or city",
     },
@@ -20,7 +22,7 @@ export function createSearchForm(parentNode) {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log(searchField.value);
+    createLoder(parentNode);
     getWeatherData(searchField.value).then((data) => {
       renderUI(parentNode, data);
     });

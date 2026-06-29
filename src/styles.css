@@ -31,7 +31,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   gap: 2rem;
   width: clamp(276px, 90vw, 800px);
   min-height: 100vh;
@@ -64,6 +64,12 @@ main {
       color: silver;
     }
   }
+}
+
+.loading-icon {
+  display: block;
+  width: clamp(100px, 50vw, 500px);
+  height: auto;
 }
 
 .weather-card {
