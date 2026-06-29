@@ -31,8 +31,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   width: clamp(276px, 90vw, 800px);
+  min-height: 100vh;
   padding: var(--spacing-m);
   margin: 0 auto;
 }
@@ -41,6 +43,27 @@ main {
   font-size: 2rem;
   text-align: center;
   margin-block: var(--spacing-m);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-block: var(--spacing-m);
+
+  .search-field {
+    font: inherit;
+    font-size: 1.75rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid silver;
+    border-radius: 10px;
+
+    &::placeholder {
+      font-weight: 200;
+      font-style: italic;
+      color: silver;
+    }
+  }
 }
 
 .weather-card {

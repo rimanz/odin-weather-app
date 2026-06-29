@@ -1,3 +1,5 @@
+import { createSearchForm } from "./search.js";
+
 /**
  * Creates an HTML element with specified attributes and properties.
  * @param {Object} options - Configuration options.
@@ -8,7 +10,7 @@
  * @param {HTMLElement} [options.parent] - Parent node to append to. Defaults to #root element.
  * @returns {HTMLElement} The created element.
  */
-function createNode(options = {}) {
+export function createNode(options = {}) {
   const node = document.createElement(options.tag || "div");
   if (options.textContent !== undefined) node.textContent = options.textContent;
 
@@ -248,4 +250,13 @@ export function createWeatherForecast(parentNode, data) {
   });
 
   return forecast;
+}
+
+export function renderUI(root, data) {
+  root.textContent = "";
+  createSearchForm(root);
+  createWeatherCard(root, data);
+  createWeatherSummary(root, data);
+  createWeatherForecast(root, data);
+  console.log(data);
 }
