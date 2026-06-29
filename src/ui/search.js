@@ -1,6 +1,6 @@
+import getWeatherData from "../weather.js";
 import { createNode, renderUI } from "./layout.js";
 import { createLoder } from "./loader.js";
-import getWeatherData from "./weather.js";
 
 export function createSearchForm(parentNode) {
   const form = createNode({
