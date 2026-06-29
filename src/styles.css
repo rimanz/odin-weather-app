@@ -10,6 +10,7 @@
   font-size: 16px;
   --spacing-m: clamp(0.5rem, 5vw, 1rem);
   --spacing-s: clamp(0.25rem, 5vw, 0.5rem);
+  --container-width: clamp(276px, 90vw, 800px);
 }
 
 body {
@@ -27,14 +28,42 @@ body {
     sans-serif;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--container-width);
+  height: 5rem;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2rem;
+    opacity: 0.5;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--container-width);
+  height: 2rem;
+  margin: 0 auto;
+
+  p {
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   gap: 2rem;
-  width: clamp(276px, 90vw, 800px);
-  min-height: 100vh;
+  width: var(--container-width);
+  min-height: calc(100vh - 7rem);
   padding: var(--spacing-m);
   margin: 0 auto;
 }
