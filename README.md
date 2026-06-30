@@ -1,20 +1,25 @@
 # Odin Weather App
 
-A minimal weather dashboard built with JavaScript and Webpack. The app fetches real-time weather data and displays current conditions, additional metrics, and a multi-day forecast for a selected location.
+A polished weather dashboard built with JavaScript and Webpack. The app fetches real-time weather data, shows current conditions, and presents a multi-day forecast for a selected location.
 
-This project was created for an assignment from [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app).
+This project was built for the [Weather App](https://www.theodinproject.com/lessons/node-path-javascript-weather-app) assignment from [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app).
 
 ## Features
 
-- Current temperature and weather conditions
-- Air quality and UV index display
-- Wind speed, pressure, and visibility information
-- Six-day forecast overview
-- Responsive dashboard layout
+- Search for a city or location and view live weather data
+- Display the current temperature, weather conditions, and summary
+- Show detailed metrics such as humidity, pressure, wind, visibility, UV index, and feels-like temperature
+- Include a six-day forecast overview
+- Provide a responsive dashboard experience with a loading state
+
+## Tech Stack
+
+- JavaScript (ES modules)
+- Webpack
+- HTML and CSS
+- Weather data from Visual Crossing
 
 ## Getting Started
-
-Follow these steps to run the project locally.
 
 ### Prerequisites
 
@@ -24,22 +29,15 @@ Follow these steps to run the project locally.
 ### Installation
 
 ```bash
-# clone the repository
 git clone https://github.com/rimanz/odin-weather-app.git
-
-# navigate into the project
 cd odin-weather-app
-
-# install dependencies
 npm install
-# or
-# yarn install
 ```
 
 ## Available Scripts
 
 - `npm run dev` - Start the development server with hot reloading
-- `npm run build` - Build the production bundle using `webpack.prod.js`
+- `npm run build` - Build the production bundle for deployment
 - `npm run lint` - Run ESLint across the codebase
 - `npm run lint:fix` - Run ESLint and apply automatic fixes
 - `npm run format` - Format files with Prettier
@@ -52,21 +50,19 @@ webpack.common.js
 webpack.dev.js
 webpack.prod.js
 src/
+  api.js
   index.js
   styles.css
   template.html
+  icons/
+  ui/
 package.json
 README.md
 ```
 
-- `src/` contains the application source files
-- `webpack.common.js` contains shared Webpack configuration
-- `webpack.dev.js` configures the development server and source maps
-- `webpack.prod.js` configures production optimization
-
 ## Usage
 
-### Start Development Server
+### Start the Development Server
 
 ```bash
 npm run dev
@@ -80,7 +76,12 @@ Open `http://localhost:8080` in your browser.
 npm run build
 ```
 
-The final production files are output to the `dist/` folder.
+The production files are output to the `dist/` folder.
+
+## Attribution
+
+- Weather icons are adapted from [Weather Icons by Visual Crossing](https://github.com/visualcrossing/WeatherIcons).
+- The loading GIF used in this project comes from a Creative Commons-licensed source. Please retain attribution to the original creator/source when reusing or redistributing it.
 
 ## Contributing
 
