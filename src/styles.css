@@ -223,3 +223,24 @@ main {
     }
   }
 }
+
+.error-msg {
+  /* display: flex; */
+  color: firebrick;
+  background-color: lightpink;
+  text-align: center;
+  padding: var(--spacing-m);
+  border: 2px solid firebrick;
+  border-radius: 10px;
+  opacity: 0.95;
+
+  h3 {
+    font-size: 1.25rem;
+    margin-block: var(--spacing-m);
+  }
+
+  p {
+    font-weight: 500;
+    margin-block: var(--spacing-m);
+  }
+}

@@ -1,3 +1,4 @@
+import { showError } from "./error.js";
 import { createWeatherForecast } from "./forecast.js";
 import { createSearchForm } from "./search.js";
 import { createWeatherCard } from "./weatherCard.js";
@@ -48,8 +49,14 @@ export async function loadImage(name, ext) {
 export function renderUI(root, data) {
   root.textContent = "";
   createSearchForm(root);
-  createWeatherCard(root, data);
-  createWeatherSummary(root, data);
-  createWeatherForecast(root, data);
-  console.log(data);
+
+  if (data.isError) {
+    console.log(data);
+    showError(root, data.error.message);
+  } else {
+    console.log(data);
+    createWeatherCard(root, data);
+    createWeatherSummary(root, data);
+    createWeatherForecast(root, data);
+  }
 }

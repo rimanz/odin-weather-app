@@ -23,9 +23,14 @@ export function createSearchForm(parentNode) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     createLoder(parentNode);
-    getWeatherData(searchField.value).then((data) => {
-      renderUI(parentNode, data);
-    });
+    getWeatherData(searchField.value)
+      .then((data) => {
+        renderUI(parentNode, data);
+      })
+      .catch((error) => {
+        console.log(error);
+        renderUI(parentNode, error);
+      });
   });
 
   return form;

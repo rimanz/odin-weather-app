@@ -3,7 +3,7 @@ export default async function fetchWeatherData(location) {
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=uk&include=days%2Ccurrent&key=${key}&contentType=json`;
 
   const response = await fetch(url);
-  const data = await response.json();
+  if (!response.ok) throw new Error(await response.text((text) => text));
 
-  return data;
+  return await response.json();
 }
