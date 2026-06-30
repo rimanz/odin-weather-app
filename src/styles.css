@@ -10,7 +10,7 @@
   font-size: 16px;
   --spacing-m: clamp(0.5rem, 5vw, 1rem);
   --spacing-s: clamp(0.25rem, 5vw, 0.5rem);
-  --container-width: clamp(276px, 90vw, 800px);
+  --container-width: clamp(276px, 90vw, 960px);
   --radius: 10px;
   --text-neutral: #2f2a2e;
   --text-error: #b22222;
@@ -89,8 +89,10 @@ main {
   margin-block: var(--spacing-m);
 
   .search-field {
+    display: block;
     font: inherit;
     font-size: 1.75rem;
+    min-width: 65%;
     padding: 0.5rem 1rem;
     border: 2px solid var(--color-secondary);
     border-radius: 10px;
@@ -122,9 +124,12 @@ main {
 .weather-card {
   display: flex;
   flex-direction: column;
-  flex-shrink: 1;
+  flex-basis: 40%;
+  flex-shrink: 0;
+  flex-grow: 0;
   gap: 0.25rem;
-  width: clamp(240px, 80vw, 400px);
+  min-width: 300px;
+  max-width: 360px;
   font-weight: 500;
   padding: var(--spacing-m);
   border: 1px solid var(--color-secondary);
@@ -164,7 +169,7 @@ main {
 }
 
 .weather-summary {
-  width: clamp(240px, 90vw, 400px);
+  width: clamp(300px, 60vw, 400px);
 
   .summary-grid {
     display: flex;
@@ -182,9 +187,10 @@ main {
     align-items: center;
     flex-basis: calc(50% - 1rem);
     flex-grow: 1;
+    flex-shrink: 0;
     gap: 1rem;
     font-weight: 500;
-    min-width: clamp(180px, 5vw, 200px);
+    width: clamp(200px, 5vw, 240px);
     padding: var(--spacing-m) var(--spacing-m);
     border: 1px solid var(--color-secondary);
     border-radius: 10px;
